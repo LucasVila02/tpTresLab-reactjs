@@ -1,0 +1,52 @@
+body{
+  background-color: #b3c2e5;
+}
+
+body.bodyRed{
+  background-color: rgb(141, 0, 0);
+}
+
+body.bodyGreen{
+  background-color: rgb(5, 76, 5);
+}
+
+
+.juego {
+    text-align: center;
+  }
+  
+  .mensaje {
+    font-size: 2rem;
+    margin: 3rem 0;
+    white-space: nowrap;
+  }
+  
+  .input-campo {
+    margin: 3rem 0;
+  }
+  
+  .input-campo input {
+    padding: 2rem;
+    font-size: 1.5rem;
+    width: 14rem;
+  }
+  
+
+  .botones{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4rem;
+    gap: 4rem;
+    justify-content: center;
+  }
+
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+  input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+  }

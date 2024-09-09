@@ -1,0 +1,18 @@
+
+div{
+    background-color: rgb(52, 102, 230);
+    margin: auto;
+    width: 50%;
+    border-radius:300px;
+    -webkit-border-radius:300px;
+    -moz-border-radius:300px;
+    -ms-border-radius:300px;
+    -o-border-radius:300px;
+}
+
+.title{
+    text-align: center;
+    color: #ffffff;
+    padding: 3rem;
+    font-size: 3rem;
+}

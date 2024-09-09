@@ -1,0 +1,9 @@
+.tabla-puntuaciones {
+    font-size: 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;
+    white-space: nowrap;
+  }

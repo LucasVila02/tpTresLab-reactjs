@@ -1,0 +1,15 @@
+html {
+  font-size: 10px;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: rgba(245, 245, 245, 0.87);
+  margin: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+}
