@@ -6,13 +6,10 @@ function App() {
 
 
   return (
-
- <>
     <div>
       <h1 className="title">ADIVINA EL NUMERO!</h1>
       <Juego/>
     </div>
- </>    
  )
 }
 
