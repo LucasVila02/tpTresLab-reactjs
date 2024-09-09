@@ -13,23 +13,8 @@ export const Juego = () => {
   const [mejorPuntuacion, setMejorPuntuacion] = useState(0);
   const [mensaje, setMensaje] = useState('Elige un numero del 1 al 20...');
   const [juegoTerminado, setJuegoTerminado] = useState(false);
-
-  useEffect(() => {
-   
-    if (puntuacion === 0) {
-      setMensaje(`¡Perdiste 💀! El número era ${numeroAleatorio}`);
-      document.body.classList.add('bodyRed'); 
-    }
-   
-    if (juegoTerminado) {
-      document.body.classList.add('bodyGreen');
-    }
+  const [valueInput, setValueInput] = useState('');
   
-    return () => {
-      document.body.classList.remove('bodyGreen', 'bodyRed');
-    };
-  }, [puntuacion, juegoTerminado, numeroAleatorio]);
-
   function generarNumeroAleatorio() {
     return Math.floor(Math.random() * 20) + 1;
   }
@@ -49,21 +34,19 @@ export const Juego = () => {
     }
   };
 
-  const [valorEntrada, setValorEntrada] = useState('');
-
   const handlerCambio = (e) => {
-    setValorEntrada(e.target.value);
+    setValueInput(e.target.value);
   };
 
   function handlerEnvio(e) {
     e.preventDefault();
-    const adivinanza = parseInt(valorEntrada);
+    const adivinanza = parseInt(valueInput);
     if (isNaN(adivinanza) || adivinanza < 1 || adivinanza > 20) {
       alert('Por favor ingresa un número entre 1 y 20');
     } else {
       handlerAdivinanza(adivinanza);
     }
-    setValorEntrada('');
+    setValueInput('');
   }
 
   const reiniciarJuego = () => {
@@ -80,6 +63,24 @@ export const Juego = () => {
     }
   };
 
+
+  useEffect(() => {
+   
+    if (puntuacion === 0) {
+      setMensaje(`¡Perdiste 💀! El número era ${numeroAleatorio}`);
+      document.body.classList.add('bodyRed'); 
+    }
+   
+    if (juegoTerminado) {
+      document.body.classList.add('bodyGreen');
+    }
+  
+    return () => {
+      document.body.classList.remove('bodyGreen', 'bodyRed');
+    };
+  }, [puntuacion, juegoTerminado, numeroAleatorio]);
+
+
   return (
     <div className="juego">
       <TablaPuntuaciones puntuacion={puntuacion} mejorPuntuacion={mejorPuntuacion} />
@@ -88,13 +89,14 @@ export const Juego = () => {
       <form onSubmit={handlerEnvio} className="input-campo" id='form-juego'>
         <input
           type="number"
-          value={valorEntrada}
+          value={valueInput}
           onChange={handlerCambio}
           onKeyDown={handlerKeyPress}
           placeholder="Ingresa un número"
           min="1"
           max="20"
         />
+       
       </form>
 
       <div className="botones">

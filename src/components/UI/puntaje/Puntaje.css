@@ -1,4 +1,5 @@
 .tabla-puntuaciones {
+    width: 100%;
     font-size: 2rem;
     margin: auto;
     display: flex;
@@ -7,3 +8,12 @@
     justify-content: center;
     white-space: nowrap;
   }
+
+@media (max-width: 800px) {
+  .tabla-puntuaciones {
+    font-size: 2rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
