@@ -58,5 +58,10 @@ body.bodyGreen{
       flex-direction: column;
       align-items: center;
     }
+
+    .mensaje{
+      padding: 0.5rem;
+      margin: 2rem;
+    }
   }
 
